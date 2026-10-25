@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+build
+.env
+dist
+example-config
+apps/integrations/build/
+apps/integrations/*.xcodeproj/
+.DS_Store
