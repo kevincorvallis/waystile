@@ -2,6 +2,14 @@
 
 This summary records checks performed while preparing the 0.1.0 beta. It describes the tested behavior and its limits; it is not an independent security audit or a claim of App Store approval.
 
+## Beta 2 preparation — November 5, 2026
+
+The full Go suite passed with the race detector. The 87 config API tests, 51 settings model tests, 10 browser add-on tests, UI type checks, frontend production build, and 16 native companion XCTest tests also passed. The local Xcode test launcher stalled before executing tests; direct XCTest execution of the same built test bundle completed with no failures.
+
+Updater regression checks cover beta versus stable release discovery, selecting the router archive instead of source or add-on archives, bounded retries after network failures, public releases remaining visible alongside older iCloud metadata, backup failure preserving installed apps, and restoring both apps after a failed activation. Chrome extension updates remain manual because their standalone files are not authenticated by the apps' signatures.
+
+Beta 2 uses release version `0.1.0-beta.2`, marketing version `0.1.0`, and internal build `7`. Distribution builds embed the committed source revision and complete prerelease version. Final signing, notarization, and download acceptance remain release-specific checks, recorded in the published release.
+
 ## Router and settings window
 
 The Go test suite passed with the race detector enabled. Focused native navigation-policy tests cover the bundled document origin, spoofed origins, credentials and ports in URLs, subframes, initial loading, redirects, and permitted external HTTP(S) links. Native bridge access is restricted to the bundled settings document in its main frame.
